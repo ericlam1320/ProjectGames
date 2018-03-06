@@ -1,0 +1,20 @@
+<tbody>
+							
+							<?php $stt = 1; ?>
+							@foreach ($user as $u)
+				            <tr>
+				                <td>{{ $stt }}</td>
+				                <td><img height="100px" src="adminAssets/img/photos/{{ $u->image }}"></td>
+				                <td>{{ $u->fullname }}</td>
+				                <td>{{ date('d/m/Y', strtotime($u->birthdate)) }}</td>
+				                <td>{{ $u->gender }}</td>
+				                <td>{{ $u->email }}</td>
+				                <td>{{ $u->phone }}</td>
+				                <td>{{ $u->role }}</td>
+				                <td width="80px" style="font-size: 25px" class="text-center"><a onclick="return XacNhanXoa('Bạn có chắc muốn xóa?')" href="admin/quantri/xoa/{{ $u->id }}"><i class="fa fa-trash-o fa-fw"></i></a></td>
+				                <td width="80px" style="font-size: 25px" class="text-center"><a href="admin/quantri/sua/{{ $u->id }}"><i class="fa fa-pencil fa-fw"></i></a></td>
+				            </tr>
+				            <?php $stt++; ?>
+							@endforeach
+
+				        </tbody>

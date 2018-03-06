@@ -1,0 +1,15 @@
+<tbody>
+							
+							<?php $stt = 1; ?>
+							@foreach ($comment as $binhluan)
+				            <tr>
+				                <td>{{ $stt }}</td>
+				                <td>{{ $binhluan->food->name }}</td>
+				                <td>{{ ($binhluan->comment) }}</td>
+				                <td>{{ $binhluan->date }}</td>
+				                <td width="80px" style="font-size: 25px" class="text-center"><a onclick="return XacNhanXoa('Bạn có chắc muốn xóa?')" href="admin/binhluan/xoa/{{ $binhluan->id }}"><i class="fa fa-trash-o fa-fw"></i></a></td>
+				            </tr>
+				            <?php $stt++; ?>
+							@endforeach
+
+				        </tbody>
