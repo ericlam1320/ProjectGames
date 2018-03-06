@@ -53,5 +53,18 @@ Route::group(['prefix'=>'admin'],function(){
         Route::get('xoa/{id}', 'CommentsController@getXoa');
     });
 
+    Route::group(['prefix'=>'links'], function(){
+
+        Route::get('danhsach', 'LinksController@getDanhSach')->name('DanhSachLink');
+
+        Route::get('them', 'LinksController@getThem')->name('ThemLink');
+        Route::post('them', 'LinksController@postThem');
+
+        Route::get('xoa/{id}', 'LinksController@getXoa');
+
+        Route::get('sua/{id}', 'LinksController@getSua');
+        Route::post('sua/{id}', 'LinksController@postSua');
+
+    });
     
 });

@@ -49,8 +49,8 @@
                           <span>Link Download</span>
                       </a>
                       <ul class="sub">
-                          <li><a  href="{{ route('ThemGames') }}">Thêm Link Download</a></li>
-                          <li><a  href="{{ route('DanhSachGames') }}">Danh sách Link Download</a></li>
+                          <li><a  href="{{ route('ThemLink') }}">Thêm Link Download</a></li>
+                          <li><a  href="{{ route('DanhSachLink') }}">Danh sách Link Download</a></li>
                       </ul>
                   </li>
 

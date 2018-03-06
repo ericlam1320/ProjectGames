@@ -16,7 +16,52 @@
                             <div class="alert alert-danger">@foreach($errors->all() as $err){{$err}}<br>@endforeach</div>
                         @endif
                         
-                        <!-- Copy o day nha -->
+                        <form method="POST" action="admin/links/sua/{{ $links->id }}" enctype="multipart/form-data">
+                                        <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                                        
+                                        <div class="row">
+                                          <div class="col-md-12">
+                                            <div class="form-group">
+                                              <label class="control-label">Chọn thể loại</label>
+                                              <select class="form-control" name="TheLoai" id="TheLoai">
+                                                @foreach($games as $game)
+                                                <option value="{{$game->id}}">{{$game->title}}</option>
+                                                @endforeach
+                                              </select>
+                                            </div>
+                                          </div>
+                                        </div>
+
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                <div class="form-group label-floating">
+                                                    <label class="control-label">Tên link</label>
+                                                    <input type="text" class="form-control" name="TenLink" value="{{ $links->note }}">
+                                                </div>
+                                            </div>   
+                                        </div>
+
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                <div class="form-group ">
+                                                    <label class="control-label">Mô tả</label>
+                                                    <textarea id="demo" class="form-control " rows="8" name="MoTa" id="MoTa">{{ $links->link }}</textarea>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                <div class="form-group ">
+                                                    <label class="control-label">Trạng thái</label>
+                                                    <textarea id="demo" class="form-control " rows="8" name="TrangThai" id="TrangThai">{{ $links->status }}</textarea>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        
+                                        <button type="submit" class="btn btn-danger pull-right">Cập nhật</button>
+                                        
+                        </form>
 
                         </div>
 

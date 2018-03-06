@@ -27,9 +27,9 @@
 				        <thead>
 				            <tr>
 				                <th>STT</th>
-				                <th>Tên game</th>
+				                <th>Tên link</th>
 				                <th>Mô tả</th>
-				                <th>Link</th>
+				                <th>Trạng thái</th>
 				                <th>Xóa</th>
 				                <th>Cập nhật</th>
 				            </tr>
@@ -37,15 +37,31 @@
 				        <tfoot>
 				            <tr>
 				                <th>STT</th>
-				                <th>Tên game</th>
+				                <th>Tên link</th>
 				                <th>Mô tả</th>
-				                <th>Link</th>
+				                <th>Trạng thái</th>
 				                <th>Xóa</th>
 				                <th>Cập nhật</th>
 				            </tr>
 				        </tfoot>
 				        
-						<!-- Copy nha -->
+						<tbody>
+							
+							<?php $stt = 1; ?>
+							@foreach ($links as $link)
+				            <tr>
+				                <td>{{ $stt }}</td>
+				                <td>{{ ($link->note) }}</td>
+				                <td>{{ $link->link }}</td>
+				                <td>{{ $link->status }}</td>
+				                
+				                <td width="80px" style="font-size: 25px" class="text-center"><a onclick="return XacNhanXoa('Bạn có chắc muốn xóa?')" href="admin/links/xoa/{{ $link->id }}"><i class="fa fa-trash-o fa-fw"></i></a></td>
+				                <td width="80px" style="font-size: 25px" class="text-center"><a href="admin/links/sua/{{ $link->id }}"><i class="fa fa-pencil fa-fw"></i></a></td>
+				            </tr>
+				            <?php $stt++; ?>
+							@endforeach
+
+				        </tbody>
 
 				    </table>
 

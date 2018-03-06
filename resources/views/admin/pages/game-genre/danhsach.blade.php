@@ -50,7 +50,7 @@
 							@foreach ($genres as $genre)
 				            <tr>
 				                <td>{{ $stt }}</td>
-				                <td>{{ $genre->name }}</td>
+				                <td>{{ $genre->link }}</td>
 				                <td>{{ ($genre->note) }}</td>
 
 				                <td width="80px" style="font-size: 25px" class="text-center"><a onclick="return XacNhanXoa('Bạn có chắc muốn xóa?')" href="admin/genres/xoa/{{ $genre->id }}"><i class="fa fa-trash-o fa-fw"></i></a></td>
