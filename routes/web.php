@@ -66,5 +66,19 @@ Route::group(['prefix'=>'admin'],function(){
         Route::post('sua/{id}', 'LinksController@postSua');
 
     });
+
+    Route::group(['prefix'=>'news'], function(){
+
+        Route::get('danhsach', 'NewsController@getDanhSach')->name('DanhSachTinTuc');
+
+        Route::get('them', 'NewsController@getThem')->name('ThemTinTuc');
+        Route::post('them', 'NewsController@postThem');
+
+        Route::get('xoa/{id}', 'NewsController@getXoa');
+
+        Route::get('sua/{id}', 'NewsController@getSua');
+        Route::post('sua/{id}', 'NewsController@postSua');
+
+    });
     
 });

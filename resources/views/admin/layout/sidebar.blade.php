@@ -60,8 +60,8 @@
                           <span>Tin tức</span>
                       </a>
                       <ul class="sub">
-                          <li><a  href="{{ route('ThemGames') }}">Thêm tin tức</a></li>
-                          <li><a  href="{{ route('DanhSachGames') }}">Danh sách tin tức</a></li>
+                          <li><a  href="{{ route('ThemTinTuc') }}">Thêm tin tức</a></li>
+                          <li><a  href="{{ route('DanhSachTinTuc') }}">Danh sách tin tức</a></li>
                       </ul>
                   </li>
 

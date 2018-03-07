@@ -29,7 +29,7 @@ class GameGenreController extends Controller
 
     	$f = new Functions;
     	$genres = new GameGenre;
-    	$genres->url = $f->changeTitle($request->TenTheLoai);
+    	$genres->url = $f->changeTitle($request->TenTheLoai); //url
     	$genres->name = $request->TenTheLoai;
     	$genres->note = $request->GhiChu;
     	$genres->save();
